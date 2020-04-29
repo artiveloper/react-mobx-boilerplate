@@ -1,8 +1,8 @@
 ## Use Mobx Decorator
 
-1. yarn add --dev customize-cra react-app-rewired  
+#####1. yarn add --dev customize-cra react-app-rewired  
 
-2. in config-ovverides.js
+#####2. add config-ovverides.js
 ```javascript
 const { 
   addDecoratorsLegacy, // decorator를 사용할 수 있도록 해주는 config
@@ -18,4 +18,29 @@ module.exports = {
   ),
 };
 ```
-3. yarn add --dev @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties
+
+#####3. yarn add --dev @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties
+
+#####4. add .babelrc
+
+```javascript
+{
+  "presets": [
+    "react-app"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ]
+}
+```
